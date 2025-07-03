@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Apresentação: Ondas Gravitacionais</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+        overflow: hidden; /* Evita a barra de rolagem da página inteira */
+      }
+      .slide {
+        display: none;
+        min-height: 450px; /* Aumentei a altura para acomodar as imagens */
+        animation: fadeIn 0.5s ease-in-out;
+        align-items: center;
+        justify-content: center;
+      }
+      .slide.active {
+        display: flex;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: scale(0.98);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+    </style>
+  </head>
+  <body
+    class="bg-gray-900 text-white flex flex-col items-center justify-center min-h-screen p-4"
+  >
+    <div
+      id="presentation-container"
+      class="w-full max-w-5xl bg-gray-800 rounded-lg shadow-2xl overflow-hidden"
+    >
+      <!-- Slides -->
+      <div id="slides-wrapper" class="relative">
+        <!-- Slide 1: Título -->
+        <div class="slide active flex-col text-center p-8" data-slide="1">
+          <h1 class="text-4xl md:text-5xl font-bold text-cyan-400 mb-4">
+            A gravidade forma ondas?
+          </h1>
+          <p class="text-xl md:text-2xl text-gray-300 mb-40">
+            As Ondulações do Espaço-Tempo
+          </p>
+          <img
+            src="gravity-waves.jpg"
+            alt="Ilustração de uma grade representando o espaço-tempo sendo distorcida por ondas."
+            class="rounded-lg shadow-lg max-w-sm mx-auto rotate-90 translate-y-8 h-96 absolute"
+          />
+          <div class="mt-24 text-sm text-gray-500">
+            <p>
+              Uma exploração baseada na Teoria da Relatividade Geral de Einstein
+            </p>
+          </div>
+        </div>
+
+        <!-- Slide 2: A Visão de Einstein -->
+        <div class="slide flex-col md:flex-row gap-8 p-8" data-slide="2">
+          <div class="md:w-1/2">
+            <h2 class="text-3xl font-bold mb-6 text-cyan-400">
+              A Visão de Einstein sobre a Gravidade
+            </h2>
+            <ul class="list-disc list-inside text-lg text-left space-y-4">
+              <li>
+                A gravidade não é uma força, mas uma consequência da
+                <strong>curvatura do espaço-tempo</strong>.
+              </li>
+              <li>
+                Objetos massivos "dobram" o tecido do espaço-tempo ao seu redor.
+              </li>
+              <li>
+                Outros corpos seguem essas curvas, o que percebemos como
+                "atração" gravitacional.
+              </li>
+            </ul>
+          </div>
+          <div class="md:w-1/2 flex items-center justify-center">
+            <img
+              src="space-time-curve.jpg"
+              alt="Ilustração da Terra curvando o tecido do espaço-tempo, com a Lua orbitando ao longo da curvatura."
+              class="rounded-lg shadow-lg w-full max-w-xs"
+            />
+          </div>
+        </div>
+
+        <!-- Slide 3: Como se Formam? -->
+        <div
+          class="slide flex-col md:flex-row-reverse gap-8 p-8"
+          data-slide="3"
+        >
+          <div class="md:w-1/2">
+            <h2 class="text-3xl font-bold mb-6 text-cyan-400">
+              Como as Ondas se Formam?
+            </h2>
+            <ul class="list-disc list-inside text-lg text-left space-y-3">
+              <li>
+                Qualquer massa em <strong>aceleração</strong> gera ondas
+                gravitacionais.
+              </li>
+              <li>
+                Fontes cósmicas poderosas incluem:
+                <ul class="list-disc list-inside ml-6 mt-2 space-y-2">
+                  <li>Dois buracos negros colidindo.</li>
+                  <li>Duas estrelas de nêutrons em fusão.</li>
+                  <li>Planetas orbitando estrelas (ondas muito fracas).</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div class="md:w-1/2 flex items-center justify-center">
+            <img
+              src="black-hole-fusion.webp"
+              alt="Ilustração de dois buracos negros orbitando um ao outro e gerando ondas no espaço-tempo."
+              class="rounded-lg shadow-lg w-full max-w-xs"
+            />
+          </div>
+        </div>
+
+        <!-- Slide 4: O Efeito de uma Onda -->
+        <div
+          class="slide flex-col items-center justify-center p-8"
+          data-slide="4"
+        >
+          <h2 class="text-3xl font-bold mb-6 text-cyan-400">
+            O Efeito de uma Onda Gravitacional
+          </h2>
+          <p class="text-lg max-w-2xl mb-6 text-center">
+            Uma onda gravitacional <strong>estica e comprime</strong> o próprio
+            espaço ao passar.
+          </p>
+          <div
+            class="w-48 h-48 border-4 border-dashed border-cyan-400 rounded-full flex items-center justify-center relative"
+            id="warp-animation"
+          >
+            <span class="text-gray-400">Espaço</span>
+          </div>
+          <p class="mt-4 text-sm text-gray-400">
+            O espaço é esticado em uma direção e comprimido na outra, de forma
+            alternada.
+          </p>
+        </div>
+
+        <!-- Slide 5: Detecção -->
+        <div class="slide flex-col md:flex-row gap-8 p-8" data-slide="5">
+          <div class="md:w-1/2">
+            <h2 class="text-3xl font-bold mb-6 text-cyan-400">
+              A Dificuldade da Detecção
+            </h2>
+            <ul class="list-disc list-inside text-lg text-left space-y-4">
+              <li>
+                As ondas são incrivelmente fracas (distorção menor que um
+                próton).
+              </li>
+              <li>
+                Foram necessários 100 anos para a tecnologia conseguir
+                detectá-las.
+              </li>
+              <li>
+                Observatórios como o <strong>LIGO</strong> e o
+                <strong>Virgo</strong> usam lasers em túneis de quilômetros de
+                comprimento.
+              </li>
+            </ul>
+          </div>
+          <div class="md:w-1/2 flex items-center justify-center">
+            <img
+              src="ligo.webp"
+              alt="Foto do observatório LIGO, com seus longos braços se estendendo pelo deserto."
+              class="rounded-lg shadow-lg w-full max-w-xs"
+            />
+          </div>
+        </div>
+
+        <!-- Slide 6: Fontes Detectadas -->
+        <div
+          class="slide flex-col md:flex-row-reverse gap-8 p-8"
+          data-slide="6"
+        >
+          <div class="md:w-1/2">
+            <h2 class="text-3xl font-bold mb-6 text-cyan-400">
+              O que Já Conseguimos "Ouvir"?
+            </h2>
+            <p class="text-lg mb-4">
+              Apenas os eventos mais violentos do universo geram ondas
+              detectáveis:
+            </p>
+            <ul class="list-disc list-inside text-lg text-left space-y-4">
+              <li>
+                <strong>Fusão de Buracos Negros:</strong> A fonte mais poderosa.
+              </li>
+              <li>
+                <strong>Fusão de Estrelas de Nêutrons:</strong> Outro evento
+                cataclísmico.
+              </li>
+            </ul>
+          </div>
+          <div class="md:w-1/2 flex items-center justify-center">
+            <img
+              src="neutron-star-fusion.jpeg"
+              alt="Concepção artística da fusão de duas estrelas de nêutrons, expelindo matéria e energia."
+              class="rounded-lg shadow-lg w-full max-w-xs"
+            />
+          </div>
+        </div>
+
+        <!-- Slide 7: Conclusão -->
+        <div class="slide flex-col text-center p-8" data-slide="7">
+          <h2 class="text-3xl font-bold mb-6 text-cyan-400">
+            Uma Nova Janela para o Universo
+          </h2>
+          <p class="text-xl max-w-3xl mb-6">
+            As ondas gravitacionais nos permitem "ouvir" os eventos cósmicos,
+            abrindo uma forma completamente nova de astronomia.
+          </p>
+          <img
+            src="astro-gravity.jpeg"
+            alt="Ilustração conceitual do universo sendo observado através de ondas, em vez de luz."
+            class="rounded-lg shadow-lg max-w-sm mx-auto"
+          />
+        </div>
+      </div>
+
+      <!-- Navegação e Contador -->
+      <div class="bg-gray-900 p-4 flex items-center justify-between">
+        <button
+          id="prevBtn"
+          class="bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-2 px-4 rounded-lg transition-colors disabled:bg-gray-600 disabled:cursor-not-allowed"
+        >
+          Anterior
+        </button>
+        <div id="slide-counter" class="text-gray-400 text-sm">
+          Slide <span id="current-slide">1</span> de
+          <span id="total-slides">7</span>
+        </div>
+        <button
+          id="nextBtn"
+          class="bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-2 px-4 rounded-lg transition-colors disabled:bg-gray-600 disabled:cursor-not-allowed after"
+        >
+          Próximo
+        </button>
+      </div>
+    </div>
+
+    <script>
+      // O código Javascript permanece o mesmo
+      const slides = document.querySelectorAll(".slide");
+      const prevBtn = document.getElementById("prevBtn");
+      const nextBtn = document.getElementById("nextBtn");
+      const currentSlideEl = document.getElementById("current-slide");
+      const totalSlidesEl = document.getElementById("total-slides");
+      const warpAnimationEl = document.getElementById("warp-animation");
+
+      let currentSlide = 0;
+      const totalSlides = slides.length;
+
+      totalSlidesEl.textContent = totalSlides;
+
+      function updateSlides() {
+        slides.forEach((slide, index) => {
+          if (index === currentSlide) {
+            slide.classList.add("active");
+            // A animação do slide 4 continua funcionando
+            if (slide.dataset.slide === "4" && warpAnimationEl) {
+              warpAnimationEl.animate(
+                [
+                  { transform: "scaleX(1) scaleY(1)" },
+                  { transform: "scaleX(1.1) scaleY(0.9)" },
+                  { transform: "scaleX(1) scaleY(1)" },
+                  { transform: "scaleX(0.9) scaleY(1.1)" },
+                  { transform: "scaleX(1) scaleY(1)" },
+                ],
+                {
+                  duration: 2000,
+                  iterations: Infinity,
+                  easing: "ease-in-out",
+                }
+              );
+            }
+          } else {
+            slide.classList.remove("active");
+          }
+        });
+        currentSlideEl.textContent = currentSlide + 1;
+        prevBtn.disabled = currentSlide === 0;
+        nextBtn.disabled = currentSlide === totalSlides - 1;
+      }
+
+      prevBtn.addEventListener("click", () => {
+        if (currentSlide > 0) {
+          currentSlide--;
+          updateSlides();
+        }
+      });
+
+      nextBtn.addEventListener("click", () => {
+        if (currentSlide < totalSlides - 1) {
+          currentSlide++;
+          updateSlides();
+        }
+      });
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "ArrowRight") {
+          nextBtn.click();
+        } else if (e.key === "ArrowLeft") {
+          prevBtn.click();
+        }
+      });
+
+      updateSlides();
+    </script>
+  </body>
+</html>
