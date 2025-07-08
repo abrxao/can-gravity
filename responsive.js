@@ -42,14 +42,14 @@ function updateSlides() {
 }
 document.addEventListener("contextmenu", (e) => {
   e.preventDefault();
-  if (currentSlide > 0 && e.target.tagName == "BODY") {
-    currentSlide--;
+  if (currentSlide < totalSlides - 1 && e.target.tagName == "BODY") {
+    currentSlide++;
     updateSlides();
   }
 });
 document.addEventListener("click", (e) => {
-  if (currentSlide < totalSlides - 1 && e.target.tagName == "BODY") {
-    currentSlide++;
+  if (currentSlide > 0 && e.target.tagName == "BODY") {
+    currentSlide--;
     updateSlides();
   }
 });

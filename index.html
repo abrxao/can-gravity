@@ -27,8 +27,27 @@
         align-items: center;
         justify-content: center;
       }
+      .slide {
+        display: none;
+        min-height: 450px; /* Aumentei a altura para acomodar as imagens */
+        animation: fadeIn 0.5s ease-in-out;
+        align-items: center;
+        justify-content: center;
+      }
       .slide.active {
         display: flex;
+      }
+      .backdrop-blur-animation {
+        backdrop-filter: blur(6px);
+        animation: backdropvar 3s infinite alternate;
+      }
+      @keyframes backdropvar {
+        from {
+          backdrop-filter: blur(2px);
+        }
+        to {
+          backdrop-filter: blur(12px);
+        }
       }
       @keyframes fadeIn {
         from {
@@ -45,10 +64,19 @@
   <body
     class="prevent-select bg-gray-700 text-white flex flex-col items-center justify-center min-h-screen p-20"
   >
+    <img
+      src="background.svg"
+      alt="background"
+      class="absolute -z-40 opacity-60 w-full"
+    />
     <div
       id="presentation-container"
-      class="w-full max-w-5xl bg-gray-800 rounded-lg shadow-2xl overflow-hidden"
+      class="w-full max-w-5xl rounded-lg shadow-2xl overflow-hidden relative backdrop-blur-animation"
     >
+      <div
+        class="w-full min-h-screen bg-gray-900 opacity-60 absolute -z-20"
+      ></div>
+
       <!-- Slides -->
       <div id="slides-wrapper" class="relative">
         <!-- Slide 1: Título -->
@@ -93,7 +121,7 @@
           </div>
           <div class="md:w-1/2 overflow-hidden">
             <img
-              src="space-time-curve.jpg"
+              src="space-time-curve.gif"
               alt="Ilustração da Terra curvando o tecido do espaço-tempo, com a Lua orbitando ao longo da curvatura."
               class="rounded-lg shadow-lg"
             />
